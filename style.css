@@ -1,0 +1,122 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+@font-face {
+    font-family: 'ProximaBlack';
+    src: url('https://www.careersourcecentralflorida.com/wp-content/themes/auxilia/lib/fonts/ProximaNova/ProximaNova-Black.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaExtraBold';
+    src: url('https://www.careersourcecentralflorida.com/wp-content/themes/auxilia/lib/fonts/ProximaNova/ProximaNova-Extrabold.otf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaBold';
+    src: url('https://www.careersourcecentralflorida.com/wp-content/themes/auxilia/lib/fonts/ProximaNova/ProximaNova-Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaRegular';
+    src: url('https://www.careersourcecentralflorida.com/wp-content/themes/auxilia/lib/fonts/ProximaNova/ProximaNova-Regular.otf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+.regular {
+    font-family: 'ProximaRegular';
+}
+.bold {
+    font-family: 'ProximaBold';
+}
+
+.extrabold {
+    font-family: 'ProximaExtraBold';
+}
+.black {
+    font-family: 'Proximablack';
+}
+
+.container {
+    max-width: 1140px;
+    margin:0 auto;
+    padding-bottom: 50px;
+}
+
+h3 {
+    color: #faa634;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top:40px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: 'ProximaExtraBold', sans-serif;
+}
+h3::after {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 15%;
+    background-color: #6a737b;
+    display: block;
+    content: '';
+}
+img {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding-bottom:20px;
+}
+ul.workshops-list {
+    list-style: none;
+    padding:0;
+    margin: 0;
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+}
+
+.workshops-list li {
+    width:40%;
+    display: flex;
+    flex-direction: column;
+}
+img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
+}
+.button3 {
+    background-color: #faa634;
+    border: 1px solid #faa634;
+    color: #fff;
+    transition: all 0.5s;
+    padding: 10px 25px;
+    text-decoration:none;
+    font-family: 'ProximaBlack', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    align-self: flex-end;
+    margin-top: auto;
+}
+.button3:hover {
+    background-color: white;
+    border: 1px solid #faa634;
+    color: #faa634;
+}
