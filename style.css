@@ -43,25 +43,78 @@ html, body {
 .black {
     font-family: 'Proximablack';
 }
-
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 50px #d3d3d3;
+}
+#mobile-header, #mobile-footer {
+    display:none;
+}
 .container {
     max-width: 1140px;
     margin:0 auto;
     padding-bottom: 50px;
 }
-
+.workshops-menu-label {
+    font-family: 'ProximaExtraBold', Arial, Helvetica, sans-serif;
+    color: #616161;
+    text-align:right;
+    padding-left: 0px;
+    padding-right:0px;
+}
+.workshops-category-label {
+    font-family: 'ProximaExtraBold', Arial, Helvetica, sans-serif;
+    padding-left:50px;
+    padding-right:50px;
+    color: #3eb049;
+}
+.workshops-container {
+    display:flex;
+}
+.workshops-menu {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: auto;
+}
+.workshops-menu-item a {
+    color: inherit!important;
+    text-decoration: none;
+}
+.workshops-menu-item {
+    /* padding: 0; */
+    padding:15px;
+    color: #3eb049;
+    margin: 0;
+    /* font-size: 12px; */
+    text-transform: uppercase;
+    font-family: 'ProximaBold', sans-serif;
+    text-align:right;
+}
+h3.workshops-menu-item:first-of-type::before {
+    display:none;
+}
+.workshops-menu-item::before {
+    content: '';
+    background: #e6e6e6;
+    display: block;
+    height: 2px;
+    width: 80px;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
 h3 {
     color: #faa634;
     position: relative;
     padding-bottom: 10px;
-    padding-top:40px;
     margin-bottom: 10px;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     font-family: 'ProximaExtraBold', sans-serif;
 }
-h3::after {
+.workshops-list h3::after {
     position: absolute;
     bottom: 0;
     height: 3px;
@@ -70,11 +123,16 @@ h3::after {
     display: block;
     content: '';
 }
-img {
+.header img {
     max-width: 100%;
     height: auto;
     box-sizing: border-box;
     padding-bottom:20px;
+}
+.workshops-page-landing-intro {
+    padding-left: 50px;
+    padding-right:50px;
+    font-family: 'ProximaRegular';
 }
 ul.workshops-list {
     list-style: none;
@@ -90,7 +148,12 @@ ul.workshops-list {
     display: flex;
     flex-direction: column;
 }
-img::before {
+.workshops-list li img {
+    align-self: center;
+    max-width: 100%;
+    padding-bottom: 10px;
+}
+.workshops-list li img::before {
   content: "";
   display: block;
   position: absolute;
@@ -120,3 +183,66 @@ img::before {
     border: 1px solid #faa634;
     color: #faa634;
 }
+
+@media (max-width: 800px) {
+    .workshops-list li {
+        width: 100%;
+        margin: 0 20%;
+    }
+    #desktop-header {
+        display:none;
+    }
+    #mobile-header {
+        display:block;
+    }
+    #desktop-footer {
+        display:none;
+    }
+    #mobile-footer {
+        display:block;
+    }
+    .header img {
+        padding-bottom: 0px;
+    }
+    .workshops-category-label {
+        text-align:center;
+    }
+    .workshops-container {
+        display:block;
+    }
+    .workshops-menu .workshops-menu-label {
+        display:none;
+    }
+    .workshops-menu {
+        display: flex;
+        overflow: hidden;
+        position: fixed;
+        top: revert;
+        bottom: 0;
+        width: 100%;
+        justify-content: space-between;
+        background: white;
+        /* background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(255,255,255,0.55) 100%); */
+        background-size: cover;
+        border-top: 1px solid #f7f7f7;
+        box-shadow: 0px -10px 100px #3eb0499e;
+    }
+    .workshops-menu-item::before {
+        display:none;
+    }
+    /* Microsoft Edge Browser Detection */
+        _:-ms-lang(x), _:-webkit-full-screen, .workshops-menu { 
+            display:none;
+        }
+}
+img {
+    user-select:none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    pointer-events:none;
+}
+
+/* Microsoft Edge Browser Detection */
+    _:-ms-lang(x), _:-webkit-full-screen, ul.workshops-list { 
+        justify-content: space-between;
+    }
